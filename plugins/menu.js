@@ -28,7 +28,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭────ꕥ %me ꕥ────
+╭────ꕥ ZEUS MD ꕥ────
 │✾ Version: %version
 │✾ Library: Baileys-MD
 │✾ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
@@ -43,10 +43,10 @@ const defaultMenu = {
 │ ✾ Level: %level
 │ ✾ Role: %role
 ╰❑
-╭─❑ 「 INFORMASI 」 ❑──
-│ Bot ini masih tahap beta
-│ apabila ada bug/eror harap
-│ lapor ke owner
+╭─❑ 「 INFORMATION 」 ❑──
+│ Bot Is In Testing
+│ If You Found Any Error
+│ Please Inform The Owner
 ╰❑
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
@@ -167,14 +167,13 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
            hydratedButtons: [{
              urlButton: {
                displayText: '💠 Source Code',
-               url: 'https://github.com/ilmanhdyt/ShiraoriBOT-Md'
+               url: 'https://github.com/Ajmal-Achu'
              }
 
            },
-             {
-             callButton: {
-               displayText: 'Nomor Owner',
-               PhoneNumber: '0813-5104-7727'
+             urlButton: {
+               displayText: '📱 Contact Owner',
+               url: 'Wa.me/919744196187'
              }
 
            },
@@ -187,7 +186,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
            },
                {
              quickReplyButton: {
-               displayText: '💲 Donasi',
+               displayText: '💲 Donate',
                id: '.donasi',
              }
 
