@@ -33,8 +33,8 @@ let message = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/fil
            },           
                {
              quickReplyButton: {
-               displayText: '🧒 Owner',
-               id: '.owner',
+               displayText: 'Rules & FAQs🤔',
+               id: '.rules',
              }
 
            }]
