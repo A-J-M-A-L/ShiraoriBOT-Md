@@ -3,13 +3,13 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let tags = {
-  'main': 'MENU UTAMA',
+  'main': 'MENU MAIN',
   'game': 'MENU GAME',
   'rpg': 'MENU RPG',
   'xp': 'MENU EXP',
   'premium': 'MENU PREMIUM',
   'group': 'MENU GROUP',
-  'absen': 'MENU ABSEN',
+  'absen': 'MENU ROLL CALL',
   'vote': 'MENU VOTE',
   'owner': 'MENU OWNER',
   'fun': 'MENU FUN',
@@ -17,7 +17,7 @@ let tags = {
   'maker': 'MENU MAKER',
   'github': 'MENU GITHUB',
   'internet': 'INTERNET',
-  'kerang': 'MENU KERANG',
+  'kerang': 'MENU SHELL',
   'anime': 'MENU ANIME',
   'downloader': 'DOWNLOADER',
   'nsfw': 'MENU NSFW',
@@ -28,10 +28,10 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭────ꕥ ZEUS MD ꕥ────
+╭────ꕥ %me ꕥ────
 │✾ Version: %version
 │✾ Library: Baileys-MD
-│✾ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
+│✾ Mode: ${global.opts['self'] ? 'Self' : 'Public'}
 │✾ Runtime: %uptime
 ╰❑
 ╭─❑ 「 INFO USER 」 ❑──
@@ -43,19 +43,16 @@ const defaultMenu = {
 │ ✾ Level: %level
 │ ✾ Role: %role
 ╰❑
-╭─❑ 「 INFORMATION 」 ❑──
-│ Bot Is In Testing
-│ If You Found Any Error
-│ Please Inform The Owner
+╭─❑ 「 INFORMASI 」 ❑──
+│ This bot is still a beta level
+│ When there is a bug / error 
+│ Report to Owner
 ╰❑
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
   body: '│ • %cmd %islimit %isPremium',
   footer: '╰────\n',
-  after: `
-*%npmname@^%version*
-${'```%npmdesc```'}
-`,
+  after: ``,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
@@ -163,7 +160,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
            hydratedContentText: text.trim(),
            locationMessage: { 
            jpegThumbnail: fs.readFileSync('./media/shiraori.jpg') },
-           hydratedFooterText: wm,
+           hydratedFooterText: `Zeus MD`,
            hydratedButtons: [{
              urlButton: {
                displayText: '💠 Source Code',
@@ -171,9 +168,10 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
              }
 
            },
-             urlButton: {
-               displayText: '📱 Contact Owner',
-               url: 'Wa.me/919744196187'
+             {
+             callButton: {
+               displayText: 'Owner Number ',
+               PhoneNumber: '1234'
              }
 
            },
@@ -207,7 +205,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
          { messageId: template.key.id }
      )
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Sorry, the menu is currently error', m)
     throw e
   }
 }
