@@ -41,7 +41,7 @@ https://github.com/D-3-V-1-L
            {
              quickReplyButton: {
                displayText: 'Rules',
-               id: '.rule',
+               id: '.rules',
              }
            },
                {
