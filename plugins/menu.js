@@ -28,7 +28,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭────ꕥ %me ꕥ────
+╭────ꕥ Zeus MD ꕥ────
 │✾ Version: %version
 │✾ Library: Baileys-MD
 │✾ Mode: ${global.opts['self'] ? 'Self' : 'Public'}
