@@ -20,21 +20,21 @@ let message = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/fil
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: 'Contact Owner',
-               url: 'Wa.me/919744196187'
+               displayText: '😻 Source Code',
+               url: 'https://saweria.co/ilmanhdyt'
              }
 
            },
-               urlButton: {
-               displayText: '💠 Source Code',
-               url: 'https://github.com/Ajmal-Achu'
+               {
+             callButton: {
+               displayText: 'Contact Owner',
+               phoneNumber: '1234'
              }
-
            },           
                {
              quickReplyButton: {
-               displayText: 'Rules & FAQs🤔',
-               id: '.rules',
+               displayText: '🧒 Owner',
+               id: '.owner',
              }
 
            }]
