@@ -5,7 +5,7 @@ let fs = require('fs')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} california`
+  if (!text) throw `Enter Query\n\ncontoh:\n${usedPrefix + command} california`
   let chat = global.db.data.chats[m.chat]
   let results = await yts(text)
   let vid = results.all.find(video => video.seconds < 3600)
@@ -29,12 +29,10 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (yt2 === false) throw 'semua server gagal'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
 let anu =  `
-*Judul:* ${title}
-*Ukuran File Audio:* ${filesizeF}
-*Ukuran File Video:* ${yt2.filesizeF}
-*Server y2mate:* ${usedServer}
-*link sumber:* 
-${vid.url}
+*Title:* ${title}
+*Audio File Size:* ${filesizeF}
+*Video File Size:* ${yt2.filesizeF}
+*Server:* ${usedServer}
 
 `
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -46,8 +44,8 @@ ${vid.url}
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: 'DONASI',
-               url: 'https://saweria.co/ilmanhdyt',
+               displayText: '🔍Url',
+               url: '$ {vid.url}',
              }
 
            },
@@ -75,7 +73,7 @@ ${vid.url}
          { messageId: template.key.id }
      )
 }
-handler.help = ['play'].map(v => v + ' <pencarian>')
+handler.help = ['play'].map(v => v + ' <search>')
 handler.tags = ['downloader']
 handler.command = /^(p|play)$/i
 
