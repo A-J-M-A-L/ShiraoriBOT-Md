@@ -136,20 +136,20 @@ case 'simi':
       break
     default:
       if (!/[01]/.test(command)) throw `
-┌〔 Daftar Opsi 〕${isOwner ? '\n├ antispam\n├ antitroli\n├ autoread\n├ simi\n├ backup\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ antilink\n├ mycontact' : ''}
+┌〔 Options 〕${isOwner ? '\n├ antispam\n├ antitroli\n├ autoread\n├ simi\n├ backup\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ antilink\n├ mycontact' : ''}
 ├ autolevelup
 ├ antilink
 ├ simi
 ├ welcome
 └────
-contoh:
+Example:
 ${usedPrefix}on welcome
 ${usedPrefix}off welcome
 `.trim()
       throw false
   }
   m.reply(`
-*${type}* berhasil di *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'untuk bot ini' : isUser ? '' : 'untuk chat ini'}
+*${type}* turned *${isEnable ? 'on' : 'off'}right* ${isAll ? 'for this bot' : isUser ? '' : 'for this chat'}
 `.trim())
 }
 handler.help = ['on', 'off'].map(v => v + ' <opsi>')
