@@ -6,12 +6,12 @@ let handler = async (m) => {
     else who = m.sender
     let user = global.db.data.users[who]
 let anu = `╭───❑ 「 BALANCE 」 ❑────
-│ ✇ Name: ${user.name}
-│ ✇ Limit: ${user.limit}
-│ ✇ Money: ${user.money}
-│ ✇ Exp: ${user.exp}
-│ ✇ Level: ${user.level}
-│ ✇ Role: ${user.role}
+│ 🔮 Name: ${user.name}
+│ 🔮 Limit: ${user.limit}
+│ 🔮 Money: ${user.money}
+│ 🔮 Exp: ${user.exp}
+│ 🔮 Level: ${user.level}
+│ 🔮 Role: ${user.role}
 ╰❑`
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
