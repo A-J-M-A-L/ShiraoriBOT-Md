@@ -3,11 +3,11 @@ let fetch = require('node-fetch')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   let ar = ['dog', 'cat', 'panda', 'fox', 'red_panda', 'koala', 'bird', 'raccoon', 'kangaroo']
   let er = `
-┌「 *Pilihan* 」
+┌「 *Choice* 」
 ${ar.map(v => '├ ' + v).join`\n`}
 └────
 
-Contoh:
+Example:
 ${usedPrefix}${command} panda
 `.trim()
   if (!text) throw er
