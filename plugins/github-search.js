@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { text, command, usedPrefix }) => {
-    if (!text) throw `contoh:\n${usedPrefix + command} ShiraoriBOT-Md`
+    if (!text) throw `Example:\n${usedPrefix + command} ShiraoriBOT-Md`
     let res = await fetch(global.API('https://api.github.com', '/search/repositories', {
         q: text
     }))
@@ -21,7 +21,7 @@ ${repo.open_issues} Issue${repo.description ? `
     }).join('\n\n')
     m.reply(str)
 }
-handler.help = ['githubsearch'].map(v => v + ' <pencarian>')
+handler.help = ['githubsearch'].map(v => v + ' <search>')
 handler.tags = ['github']
 
 handler.command = /^g(ithub|h)search$/i
