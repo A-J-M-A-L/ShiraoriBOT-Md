@@ -6,11 +6,11 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
 
-    if (!text) return conn.reply(m.chat, 'Masukan Teksnya', m)
+    if (!text) return conn.reply(m.chat, 'Input text', m)
 
     await m.reply('Searching...')
 	axios.get(`http://lolhuman.herokuapp.com/api/tebakumur?apikey=31caf10e4a64e86c1a92bcba&name=${text}`).then ((res) => {
-	 	let hasil = `Namamu : ${text}\nUmurmu : ${res.data.result.age}`
+	 	let hasil = `Your name : ${text}\nYour age : ${res.data.result.age}`
 
     conn.reply(m.chat, hasil, m)
 	})
