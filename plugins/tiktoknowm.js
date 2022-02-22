@@ -22,7 +22,7 @@ let handler = async (m, { conn, args }) => {
 ${txt}
   `.trim(), m)*/
   let url = json.result.link_dl1 || json.result.link_dl2 || ''
-  if (!url) throw 'Gagal mengambil url download'
+  if (!url) throw 'Failed to fetch download url'
   let txt = `
   - *By:* ${json.result.name}
   - *Caption:*
