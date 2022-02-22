@@ -5,10 +5,10 @@ let handler = async (m, { text }) => {
   let teks = results.all.map(v => {
     switch (v.type) {
       case 'video': return `
-*${v.title}* (${v.url})
-Duration: ${v.timestamp}
-Uploaded ${v.ago}
-${v.views} views
+*Title* : *${v.title}* (${v.url})
+*Duration* : ${v.timestamp}
+*Uploaded* :${v.ago}
+*Views* : ${v.views} views
       `.trim()
       case 'channel': return `
 *${v.name}* (${v.url})
@@ -19,7 +19,7 @@ ${v.videoCount} video
   }).filter(v => v).join('\n========================\n')
   m.reply(teks)
 }
-handler.help = ['ytsearch <pencarian>']
+handler.help = ['ytsearch <search>']
 handler.tags = ['internet']
 handler.command = /^yts(earch)?$/i
 
