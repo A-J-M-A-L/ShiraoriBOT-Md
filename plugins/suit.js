@@ -1,39 +1,39 @@
 let handler = async (m, { text, usedPrefix }) => {
-    let salah = `Pilihan yang tersedia\n\ngunting, kertas, batu\n\n${usedPrefix}suit gunting\n\nkasih spasi!`
+    let salah = `Available options \ n \ scissors, paper, stone\n\n${usedPrefix}scissor suit\n\nplease space!`
     if (!text) throw salah
     var astro = Math.random()
 
     if (astro < 0.34) {
         astro = 'batu'
     } else if (astro > 0.34 && astro < 0.67) {
-        astro = 'gunting'
+        astro = 'scissor'
     } else {
-        astro = 'kertas'
+        astro = 'paper'
     }
 
     //menentukan rules
     if (text == astro) {
-        m.reply(`Seri!\nkamu: ${text}\nBot: ${astro}`)
+        m.reply(`Seri!\nYou: ${text}\nBot: ${astro}`)
     } else if (text == 'batu') {
-        if (astro == 'gunting') {
+        if (astro == 'scissor') {
             global.db.data.users[m.sender].money += 1000
-            m.reply(`Kamu menang! +Rp1000\nKamu: ${text}\nBot: ${astro}`)
+            m.reply(`You win! +Rp1000\nYou: ${text}\nBot: ${astro}`)
         } else {
-            m.reply(`Kamu kalah!\nkamu: ${text}\nBot: ${astro}`)
+            m.reply(`You lose!\nYou: ${text}\nBot: ${astro}`)
         }
-    } else if (text == 'gunting') {
-        if (astro == 'kertas') {
+    } else if (text == 'scissor') {
+        if (astro == 'paper') {
             global.db.data.users[m.sender].money += 1000
-            m.reply(`Kamu menang! +Rp1000\nKamu: ${text}\nBot: ${astro}`)
+            m.reply(`You win! +Rp1000\nYou: ${text}\nBot: ${astro}`)
         } else {
-            m.reply(`Kamu kalah!\nkamu: ${text}\nBot: ${astro}`)
+            m.reply(`You lose!\nYou: ${text}\nBot: ${astro}`)
         }
-    } else if (text == 'kertas') {
+    } else if (text == 'paper') {
         if (astro == 'batu') {
             global.db.data.users[m.sender].money += 1000
-            m.reply(`Kamu menang! +Rp1000\nKamu: ${text}\nBot: ${astro}`)
+            m.reply(`You win! +Rp1000\nYou: ${text}\nBot: ${astro}`)
         } else {
-            m.reply(`Kamu kalah!\nkamu: ${text}\nBot: ${astro}`)
+            m.reply(`You lose!\nYou: ${text}\nBot: ${astro}`)
         }
     } else {
         throw salah
